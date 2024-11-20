@@ -1,0 +1,5 @@
+App-grep-sounds-like-*
+.build
+*~
+nytprof*
+.DS_Store
