@@ -126,11 +126,11 @@ MARKDOWN
             my @matching_words;
             for (@words) { push @matching_words, $_ if $phonetic_obj->compare($_, $args{word}) }
 
-            return [0] unless @words;
+            return [0] unless @matching_words;
             my $re = join("|", map {quotemeta($_)} @matching_words);
 
             (my $highlighted_line = $line) =~ s/($re)/$ansi_highlight_seq$1\e[0m/g;
-
+            [1, $highlighted_line];
         };
 
         AppBase::Grep::grep(%args);
