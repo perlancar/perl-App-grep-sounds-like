@@ -75,6 +75,9 @@ MARKDOWN
         ];
 
         $meta->{links} = [
+            {
+                url => 'prog:grep-similar-to',
+            },
         ];
     },
     output_code => sub {
